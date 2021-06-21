@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Type Wise Report" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="typeWiseReport.aspx.cs" Inherits="C183027_Project1.typeWiseReport" %>
+﻿<%@ Page Title="Un-Paid Bill" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="unPaidBill.aspx.cs" Inherits="C183027_Project1.unPaidBill" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
         <div>
@@ -36,36 +36,33 @@
 
                          &nbsp;&nbsp;&nbsp;&nbsp;
 
-                         <asp:Button ID="showButton" runat="server" Text="SHOW" Width="100px" />
+                         <asp:Button ID="showButton" runat="server" Text="SHOW" Width="100px" OnClick="showButton_Click"/>
                         <br />
-                         <Table ID="Table1" class="table table-dark" Height="400px" Width="690px">
-                            <thead>
-                                <tr>
-                                    <th>SL.</th>
-                                    <th>Test Type Name</th>s
-                                    <th>Total No Of Test</th>
-                                    <th>Total Amount</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Blood</td>
-                                    <td>5</td>
-                                    <td>1000tk</td>
-                                </tr>
-                            </tbody>
-                         </Table>
-                          <br />
-                         <br />
-                          <asp:Button ID="pdfButton" runat="server" Text="PDF" Width="100px" />
+                          <br/>
+                        <br/>
+                        <asp:GridView ID="unpaidBillReportGridView" AutoGenerateColumns="False" CssClass="gridView" runat="server">
+                            <Columns>
+                                <asp:TemplateField HeaderText="SN" ItemStyle-Width="30px" ItemStyle-HorizontalAlign="Center">
+                                    <ItemTemplate>
+                                        <%#Container.DataItemIndex+1 %>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:BoundField ItemStyle-Width="100px" ItemStyle-HorizontalAlign="Center" DataField="BillNo" HeaderText="Bill No"/>
+                                <asp:BoundField ItemStyle-Width="150px" ItemStyle-HorizontalAlign="Center" DataField="Name" HeaderText="Patient Name"/>
+                                <asp:BoundField ItemStyle-Width="150px" ItemStyle-HorizontalAlign="Center" DataField="MobileNo" HeaderText="Mobile No"/>
+                                <asp:BoundField ItemStyle-Width="150px" ItemStyle-HorizontalAlign="Center" DataField="BillAmount" HeaderText="Bill Amount"/>
+                            </Columns>
+                        </asp:GridView>
+                        <br/>
+                        <br/>
+                        <asp:Button ID="pdfButton" runat="server" Text="PDF" Width="100px" OnClick="pdfButton_Click" />
                         <br />
                          <br />
                             <asp:Label ID="Label6" runat="server" Text="Total" Font-Bold="True" Font-Size="Medium"></asp:Label>
     
                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
 
-                         <input id="totalInput" runat="server" type="number" />
+                         <input id="totalInput" CssClass="textBox"  ReadOnly="True" runat="server" type="number" />
                          <br />
                     </fieldset><br />
                 </asp:Panel>

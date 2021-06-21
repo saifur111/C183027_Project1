@@ -44,6 +44,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
@@ -124,7 +127,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="index.aspx" />
-    <Content Include="payment.aspx" />
+    <Content Include="View\payment.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -154,12 +157,12 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
-    <Content Include="testRequestEntry.aspx" />
-    <Content Include="testSetup.aspx" />
-    <Content Include="testTypeSetup.aspx" />
-    <Content Include="testWiseReport.aspx" />
-    <Content Include="typeWiseReport.aspx" />
-    <Content Include="unPaidBill.aspx" />
+    <Content Include="View\testRequestEntry.aspx" />
+    <Content Include="View\testSetup.aspx" />
+    <Content Include="View\testTypeSetup.aspx" />
+    <Content Include="View\testWiseReport.aspx" />
+    <Content Include="View\typeWiseReport.aspx" />
+    <Content Include="View\unPaidBill.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -168,7 +171,16 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="databaseConnection.cs" />
+    <Compile Include="BillAdminLayer\PaymentManager.cs" />
+    <Compile Include="BillAdminLayer\PDFManager.cs" />
+    <Compile Include="BillAdminLayer\ReportManager.cs" />
+    <Compile Include="BillAdminLayer\TestManager.cs" />
+    <Compile Include="BillAdminLayer\TestRequestManager.cs" />
+    <Compile Include="Controller\DatabaseConnection.cs" />
+    <Compile Include="Controller\PaymentDatabase.cs" />
+    <Compile Include="Controller\ReportDatabase.cs" />
+    <Compile Include="Controller\TestDatabase.cs" />
+    <Compile Include="Controller\TestRequestDatabase.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -186,15 +198,22 @@
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="payment.aspx.cs">
+    <Compile Include="Model\DueView.cs" />
+    <Compile Include="Model\Patient.cs" />
+    <Compile Include="Model\Test.cs" />
+    <Compile Include="Model\TestRequest.cs" />
+    <Compile Include="Model\TestType.cs" />
+    <Compile Include="Model\TestWiseReportView.cs" />
+    <Compile Include="Model\TypeWiseReportView.cs" />
+    <Compile Include="Model\UnpaidBillReportView.cs" />
+    <Compile Include="View\payment.aspx.cs">
       <DependentUpon>payment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="payment.aspx.designer.cs">
+    <Compile Include="View\payment.aspx.designer.cs">
       <DependentUpon>payment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Receptionist.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -209,46 +228,46 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
-    <Compile Include="testRequestEntry.aspx.cs">
+    <Compile Include="View\testRequestEntry.aspx.cs">
       <DependentUpon>testRequestEntry.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="testRequestEntry.aspx.designer.cs">
+    <Compile Include="View\testRequestEntry.aspx.designer.cs">
       <DependentUpon>testRequestEntry.aspx</DependentUpon>
     </Compile>
-    <Compile Include="testSetup.aspx.cs">
+    <Compile Include="View\testSetup.aspx.cs">
       <DependentUpon>testSetup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="testSetup.aspx.designer.cs">
+    <Compile Include="View\testSetup.aspx.designer.cs">
       <DependentUpon>testSetup.aspx</DependentUpon>
     </Compile>
-    <Compile Include="testTypeSetup.aspx.cs">
+    <Compile Include="View\testTypeSetup.aspx.cs">
       <DependentUpon>testTypeSetup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="testTypeSetup.aspx.designer.cs">
+    <Compile Include="View\testTypeSetup.aspx.designer.cs">
       <DependentUpon>testTypeSetup.aspx</DependentUpon>
     </Compile>
-    <Compile Include="testWiseReport.aspx.cs">
+    <Compile Include="View\testWiseReport.aspx.cs">
       <DependentUpon>testWiseReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="testWiseReport.aspx.designer.cs">
+    <Compile Include="View\testWiseReport.aspx.designer.cs">
       <DependentUpon>testWiseReport.aspx</DependentUpon>
     </Compile>
-    <Compile Include="typeWiseReport.aspx.cs">
+    <Compile Include="View\typeWiseReport.aspx.cs">
       <DependentUpon>typeWiseReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="typeWiseReport.aspx.designer.cs">
+    <Compile Include="View\typeWiseReport.aspx.designer.cs">
       <DependentUpon>typeWiseReport.aspx</DependentUpon>
     </Compile>
-    <Compile Include="unPaidBill.aspx.cs">
+    <Compile Include="View\unPaidBill.aspx.cs">
       <DependentUpon>unPaidBill.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="unPaidBill.aspx.designer.cs">
+    <Compile Include="View\unPaidBill.aspx.designer.cs">
       <DependentUpon>unPaidBill.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">

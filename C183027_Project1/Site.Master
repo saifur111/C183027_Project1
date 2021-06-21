@@ -51,29 +51,29 @@
                 </div>
                 <div class="navbar-collapse collapse" id="navbarNavDropdown">
                     <ul class="nav navbar-nav" style="display:inline-block;">
-                        <li class="nav-item" style="width:120px;"><a runat="server" href="~/index">Home</a></li>
+                        <li class="nav-item" style="width:120px;"><a runat="server" href="~/">Home</a></li>
 
                         <li class="nav-item dropdown" style="width:180px; margin-right:10px;">
                             <a runat="server" href="#" class="btn btn-secondary dropdown-toggle"  role="button" id="A2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SetUp</a>
                               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" runat="server" href="~/testTypeSetup">Test Type</a>
-                                 <a class="dropdown-item" runat="server" href="~/testSetup">Test</a>
+                                <a class="dropdown-item" runat="server" href="~/View/testTypeSetup">Test Type</a>
+                                 <a class="dropdown-item" runat="server" href="~/View/testSetup">Test</a>
                               </div>
                         </li>
                         
                         <li class="nav-item dropdown" style="width:180px;margin-right:10px;">
                             <a runat="server" href="#" class="btn btn-secondary dropdown-toggle"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Test Request</a>
                               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" runat="server" href="~/testRequestEntry">Entry</a>
-                                    <a class="dropdown-item" runat="server" href="~/payment">Payment</a>
+                                    <a class="dropdown-item" runat="server" href="~/View/testRequestEntry">Entry</a>
+                                    <a class="dropdown-item" runat="server" href="~/View/payment">Payment</a>
                               </div>
                         </li>
                         <li class="nav-item dropdown" style="width:180px; margin-right:10px;">
                             <a runat="server" href="#" class="btn btn-secondary dropdown-toggle"  role="button" id="A1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Report</a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                      <a class="dropdown-item" runat="server" href="~/testWiseReport">Test Wise</a>
-                                      <a class="dropdown-item" runat="server" href="~/typeWiseReport">Type Wise</a>
-                                      <a class="dropdown-item" runat="server" href="~/unPaidBill">UnPaid Bill</a>
+                                      <a class="dropdown-item" runat="server" href="~/View/testWiseReport">Test Wise</a>
+                                      <a class="dropdown-item" runat="server" href="~/View/typeWiseReport">Type Wise</a>
+                                      <a class="dropdown-item" runat="server" href="~/View/unPaidBill">UnPaid Bill</a>
                                 </div>
                         </li>
                     </ul>

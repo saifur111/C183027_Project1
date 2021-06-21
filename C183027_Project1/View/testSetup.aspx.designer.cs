@@ -69,13 +69,22 @@ namespace C183027_Project1
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// DropDownList1 control.
+        /// testTypeDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList testTypeDropDownList;
+
+        /// <summary>
+        /// outputLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label outputLabel;
 
         /// <summary>
         /// testValueButton control.
@@ -85,6 +94,15 @@ namespace C183027_Project1
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button testValueButton;
+
+        /// <summary>
+        /// testSetupGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView testSetupGridView;
 
         /// <summary>
         /// Panel4 control.

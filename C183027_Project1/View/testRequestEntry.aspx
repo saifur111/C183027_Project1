@@ -34,14 +34,14 @@
                          <asp:Label ID="Label4" runat="server" Text="Select Test" Font-Bold="True" Font-Size="Medium"></asp:Label>
                          
                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                         <asp:DropDownList ID="selectTesk" runat="server"></asp:DropDownList>
+                         <asp:DropDownList ID="selectTestDropDownList" AutoPostBack="True" runat="server" OnSelectedIndexChanged="testTypeDropDown_SelectedIndexChanged"></asp:DropDownList>
                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                          <br />
                          <br />
 
                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                         <asp:Label ID="Label3" runat="server" Text="Fee" Font-Bold="True" Font-Size="Medium"></asp:Label>
+                         <asp:Label ID="Label3" runat="server" Text="Fee(BDT)" Font-Bold="True" Font-Size="Medium"></asp:Label>
                 
                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -50,39 +50,36 @@
                          <input id="feeInput" runat="server" type="number" />
 
                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                         <br/>
+                         <asp:Label ID="outputLabel" CssClass="outputLabel" runat="server"></asp:Label>
+                         <br/>
 
                          <br />
                          <br />
 
-                         <asp:Button ID="addButton" runat="server" Text="ADD" Width="100px" />
-                        <br />
-                         <Table ID="Table1" class="table table-dark" Height="400px" Width="690px">
-                            <thead>
-                                <tr>
-                                    <th>SL.</th>
-                                    <th>Test</th>s
-                                    <th>Fee</th>
-                                    
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Blood</td>
-                                    <td>200tk</td>
-                                </tr>
-                            </tbody>
-                         </Table>
+                         <asp:Button ID="addButton" runat="server" Text="ADD" Width="100px" onclick="addButton_Click" />
+                         <br />
+                         <asp:GridView ID="testRequestGridView" AutoGenerateColumns="False" CssClass="gridView" runat="server">
+                               <Columns>
+                                    <asp:TemplateField HeaderText="SN" ItemStyle-Width="30px" ItemStyle-HorizontalAlign="Center">
+                                        <ItemTemplate>
+                                            <%#Container.DataItemIndex+1 %>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:BoundField ItemStyle-Width="150px" DataField="TestName" HeaderText="Test Name"/>
+                                    <asp:BoundField ItemStyle-Width="150px" ItemStyle-HorizontalAlign="Center" DataField="Fee" HeaderText="Fee"/>
+                                </Columns>
+                          </asp:GridView>
                           <br />
-                         <br />
-                            <asp:Label ID="Label6" runat="server" Text="Total" Font-Bold="True" Font-Size="Medium"></asp:Label>
+                          <br />
+                          <asp:Label ID="Label6" runat="server" Text="Total" Font-Bold="True" Font-Size="Medium"></asp:Label>
     
                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
 
-                         <input id="totalInput" runat="server" type="number" />
+                         <input id="totalInput" runat="server" ForeColor="red" CssClass="textBox" ReadOnly="True" type="number" />
                           <br />
                          <br />
-                          <asp:Button ID="saveButton" runat="server" Text="SAVE" Width="100px" />
+                          <asp:Button ID="saveButton" runat="server" Text="SAVE" Width="100px" OnClick="saveButton_Click" />
                         <br />
                     </fieldset><br />
                 </asp:Panel>

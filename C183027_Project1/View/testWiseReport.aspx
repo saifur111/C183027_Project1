@@ -36,36 +36,31 @@
 
                          &nbsp;&nbsp;&nbsp;&nbsp;
 
-                         <asp:Button ID="showButton" runat="server" Text="SHOW" Width="100px" />
-                        <br />
-                         <Table ID="Table1" class="table table-dark" Height="400px" Width="690px">
-                            <thead>
-                                <tr>
-                                    <th>SL.</th>
-                                    <th>Test Name</th>s
-                                    <th>Total Test</th>
-                                    <th>Total Amount</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Blood</td>
-                                    <td>5</td>
-                                    <td>1000tk</td>
-                                </tr>
-                            </tbody>
-                         </Table>
-                          <br />
-                         <br />
-                          <asp:Button ID="pdfButton" runat="server" Text="PDF" Width="100px" />
+                         <asp:Button ID="showButton" runat="server" Text="SHOW" Width="100px" OnClick="showButton_Click"/>
+                        <br/>
+                            <br/>
+                            <asp:GridView ID="testWiseReportGridView" AutoGenerateColumns="False" CssClass="gridView" runat="server">
+                                <Columns>
+                                    <asp:TemplateField HeaderText="SN" ItemStyle-Width="30px" ItemStyle-HorizontalAlign="Center">
+                                        <ItemTemplate>
+                                            <%#Container.DataItemIndex+1 %>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:BoundField ItemStyle-Width="150px" DataField="TestName" HeaderText="Test Name"/>
+                                    <asp:BoundField ItemStyle-Width="150px" DataField="NoOfTest" ItemStyle-HorizontalAlign="Center" HeaderText="No Of Test"/>
+                                    <asp:BoundField ItemStyle-Width="150px" DataField="TotalAmount" ItemStyle-HorizontalAlign="Center" HeaderText="Total Amount"/>
+                                </Columns>
+                            </asp:GridView>
+                            <br/>
+                            <br/>
+                          <asp:Button ID="pdfButton" runat="server" Text="PDF" Width="100px" OnClick="pdfButton_Click" />
                         <br />
                          <br />
-                            <asp:Label ID="Label6" runat="server" Text="Total" Font-Bold="True" Font-Size="Medium"></asp:Label>
+                            <asp:Label ID="Label6" runat="server" Text="Total (BDT)" Font-Bold="True" Font-Size="Medium"></asp:Label>
     
                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
 
-                         <input id="totalInput" runat="server" type="number" />
+                         <input id="totalInput" runat="server" ReadOnly="True" type="number" />
                          <br />
                     </fieldset><br />
                 </asp:Panel>

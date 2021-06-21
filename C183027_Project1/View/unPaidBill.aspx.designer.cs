@@ -11,7 +11,7 @@ namespace C183027_Project1
 {
 
 
-    public partial class typeWiseReport
+    public partial class unPaidBill
     {
 
         /// <summary>
@@ -67,6 +67,15 @@ namespace C183027_Project1
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button showButton;
+
+        /// <summary>
+        /// unpaidBillReportGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView unpaidBillReportGridView;
 
         /// <summary>
         /// pdfButton control.

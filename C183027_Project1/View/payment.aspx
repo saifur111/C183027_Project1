@@ -23,14 +23,17 @@
                          <input id="mobileNoInput" runat="server" type="number" />
                          <br />
                          <br />
-                          <asp:Button ID="searchButton" runat="server" Text="SEARCH" Width="100px" />
-                        <br />
-                          <br />
+                         <asp:Button ID="searchButton" runat="server" Text="SEARCH" Width="100px" OnClick="searchButton_Click"/>
+                         <br />
+                         <br/>
+                         <asp:Label ID="outputLabel" CssClass="outputLabel" runat="server"></asp:Label>
+                         <br/>
+                         <br />
                          <br />
                          <asp:Label ID="Label4" runat="server" Text="Amount" Font-Bold="True" Font-Size="Medium"></asp:Label>
                          
                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                         <input id="amountInput" runat="server" type="number" />
+                         <input id="amountInput" runat="server" type="number" ReadOnly="True" />
                          <br />
                          <br />
                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -42,7 +45,7 @@
                           <br />
                          <br />
            
-                          <asp:Button ID="payButton" runat="server" Text="PAY" Width="100px" />
+                          <asp:Button ID="payButton" runat="server" Text="PAY" Width="100px" OnClick="payButton_Click" />
                         <br />
                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </fieldset><br />

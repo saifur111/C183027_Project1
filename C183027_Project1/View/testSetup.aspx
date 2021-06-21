@@ -40,30 +40,41 @@
 
                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
 
-                         <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
+                         <asp:DropDownList ID="testTypeDropDownList" runat="server"></asp:DropDownList>
 
                          &nbsp;&nbsp;&nbsp;&nbsp;
+                         <br/>
+                         <br/>
+                         <asp:Label ID="outputLabel" CssClass="outputLabel" runat="server"></asp:Label>
+                         <br/>
+                         <br/>
 
-                         <asp:Button ID="testValueButton" runat="server" Text="SAVE" Width="100px" />
-                        <br />
-                         <Table ID="Table1" class="table table-dark" Height="400px" Width="690px">
-                            <thead>
-                                <tr>
-                                    <th>SL.</th>
-                                    <th>Test Name</th>s
-                                    <th>Fee</th>
-                                    <th>Type Name</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Blood</td>
-                                    <td>200tk</td>
-                                    <td>Blood Test</td>
-                                </tr>
-                            </tbody>
-                         </Table>
+                         <asp:Button ID="testValueButton" runat="server" Text="SAVE" OnClick="saveButton_Click" Width="100px" />
+                         <br/>
+                            <asp:GridView ID="testSetupGridView" AutoGenerateColumns="False" CssClass="gridView" runat="server">
+                                <Columns>
+                                    <asp:TemplateField HeaderText="SN" ItemStyle-Width="30px" ItemStyle-HorizontalAlign="Center">
+                                        <ItemTemplate>
+                                            <%#Container.DataItemIndex+1 %>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Test Name" ItemStyle-Width="250px">
+                                    <ItemTemplate>
+                                        <asp:Label Text='<%#Eval("TestName") %>' runat="server"></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Fee" ItemStyle-Width="100px" ItemStyle-HorizontalAlign="Center">
+                                    <ItemTemplate>
+                                        <asp:Label Text='<%#Eval("Fee") %>' runat="server"></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Test Type" ItemStyle-Width="100px">
+                                    <ItemTemplate>
+                                        <asp:Label Text='<%#Eval("TestType") %>' runat="server"></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                </Columns>
+                            </asp:GridView>
                     </fieldset><br />
                 </asp:Panel>
 

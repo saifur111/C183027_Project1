@@ -11,8 +11,17 @@ namespace C183027_Project1
 {
 
 
-    public partial class payment
+    public partial class typeWiseReport
     {
+
+        /// <summary>
+        /// Panel3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel3;
 
         /// <summary>
         /// Label2 control.
@@ -24,85 +33,76 @@ namespace C183027_Project1
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// billNoInput control.
+        /// fromDateInput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText billNoInput;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl fromDateInput;
 
         /// <summary>
-        /// Label5 control.
+        /// Label3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// mobileNoInput control.
+        /// toDateInput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl mobileNoInput;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl toDateInput;
 
         /// <summary>
-        /// searchButton control.
+        /// showButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button searchButton;
+        protected global::System.Web.UI.WebControls.Button showButton;
 
         /// <summary>
-        /// Label4 control.
+        /// typeWiseReportGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.GridView typeWiseReportGridView;
 
         /// <summary>
-        /// amountInput control.
+        /// pdfButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl amountInput;
+        protected global::System.Web.UI.WebControls.Button pdfButton;
 
         /// <summary>
-        /// Label1 control.
+        /// Label6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label Label6;
 
         /// <summary>
-        /// dueDateInput control.
+        /// totalInput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl dueDateInput;
-
-        /// <summary>
-        /// payButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button payButton;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl totalInput;
 
         /// <summary>
         /// Panel4 control.
